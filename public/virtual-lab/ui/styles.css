@@ -1,0 +1,21 @@
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial;color:#e6f0ff;background:#020617}
+.preload-screen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(1200px 800px at 60% -20%,rgba(59,130,246,.15),transparent 60%),linear-gradient(180deg,#030712,#0b1220);z-index:50}
+.preload-screen .card{width:min(680px,92vw);background:rgba(15,23,42,.7);backdrop-filter:blur(10px);border:1px solid rgba(59,130,246,.25);border-radius:16px;padding:28px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.preload-screen h1{margin:0 0 6px;font-size:28px;font-weight:800;color:#e6f0ff}
+.preload-screen p{margin:0 0 14px;color:#a6c0ff}
+.preload-screen .row{display:flex;align-items:center;gap:12px;margin:8px 0}
+.preload-screen select,.preload-screen input[type=checkbox]{background:#0b1324;border:1px solid rgba(148,163,184,.35);color:#e6f0ff;border-radius:8px;padding:8px}
+.preload-screen button{margin-top:14px;background:linear-gradient(135deg,#2563eb,#7c3aed);border:none;color:#fff;padding:12px 18px;border-radius:10px;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(37,99,235,.35);transition:transform .2s ease,opacity .2s ease}
+.preload-screen button:hover{transform:translateY(-1px);opacity:.95}
+.preload-screen .sub{font-size:12px;color:#94a3b8;margin-top:10px}
+.status{margin-top:6px;font-size:12px}
+
+.fallback{position:fixed;inset:0;background:#0b1220}
+.fallback.hidden{display:none}
+.fallback canvas{position:absolute;inset:0;width:100%;height:100%}
+.fallback .overlay{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:rgba(2,6,23,.7);border:1px solid rgba(59,130,246,.25);padding:12px 16px;border-radius:10px;color:#c7d2fe}
+
+#sceneContainer{position:fixed;inset:0}
+.debug{position:fixed;top:12px;left:12px;background:rgba(2,6,23,.7);border:1px solid rgba(59,130,246,.25);padding:8px 12px;border-radius:8px;color:#9fb6ff;font:12px/1.2 monospace;z-index:60}
+.debug.hidden{display:none}
+.ui-panel{position:absolute;background:rgba(15,23,42,.65);border:1px solid rgba(148,163,184,.25);color:#e6f0ff;border-radius:12px;padding:10px}

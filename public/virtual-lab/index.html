@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Virtual Reality Science Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/virtual-lab/ui/styles.css" />
+  <!-- Load A-Frame and helpers from CDN (open-source) -->
+  <script src="https://unpkg.com/aframe@1.5.0/dist/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-extras@^7.0.0/dist/aframe-extras.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-system@4.0.2/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.4.0/dist/aframe-environment-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.18.0/dist/tf.min.js"></script>
+</head>
+<body>
+  <div id="preload-screen" class="preload-screen">
+    <div class="card">
+      <h1>Virtual Reality Science Lab</h1>
+      <p>Explore Physics, Chemistry, and AI in immersive WebXR.</p>
+      <div class="row">
+        <label for="quality">Quality</label>
+        <select id="quality">
+          <option value="high">High</option>
+          <option value="medium" selected>Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="comfort">Comfort Mode</label>
+        <input id="comfort" type="checkbox" checked />
+      </div>
+      <button id="startBtn">Start VR</button>
+      <p class="sub">Works on desktop and VR headsets. Requires WebGL/WebXR.</p>
+      <div id="webglStatus" class="status"></div>
+    </div>
+  </div>
+
+  <!-- 2D fallback container -->
+  <div id="fallback2d" class="fallback hidden">
+    <canvas id="fallbackCanvas"></canvas>
+    <div class="overlay">
+      <h2>2D Fallback Mode</h2>
+      <p>Your device does not support WebGL/WebXR. Enjoy interactive 2D demos.</p>
+      <button id="retryWebGL">Retry WebGL</button>
+    </div>
+  </div>
+
+  <!-- A-Frame scene is injected after Start click to avoid black-screen and manage lifecycle -->
+  <div id="sceneContainer"></div>
+
+  <!-- Debug overlay -->
+  <div id="debug" class="debug hidden"></div>
+
+  <script src="/virtual-lab/scripts/progress.js"></script>
+  <script src="/virtual-lab/scripts/missions.js"></script>
+  <script src="/virtual-lab/scripts/physics.js"></script>
+  <script src="/virtual-lab/scripts/chemistry.js"></script>
+  <script src="/virtual-lab/scripts/ai.js"></script>
+  <script src="/virtual-lab/scripts/main.js"></script>
+</body>
+</html>
